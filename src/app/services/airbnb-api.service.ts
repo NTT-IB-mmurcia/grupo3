@@ -16,6 +16,21 @@ export class AirbnbApiService {
   getDetailById(id : string) : Observable<Detail>{
     return this.http.get<Detail>(this.detailURL + id)
   }
+
+  getList() {
+    let geoLocation = {
+      "position": {
+          "lat": 41.390205,
+          "lng": 2.154007
+      }
+    }
+    window.navigator.geolocation.getCurrentPosition((position) => {
+      geoLocation.position.lat = position.coords.latitude;
+      geoLocation.position.lng = position.coords.longitude;
+    }
+    return this.http.post<Detail>(this.searchURL, geoLocation);
+
+  }
 }
 
 
