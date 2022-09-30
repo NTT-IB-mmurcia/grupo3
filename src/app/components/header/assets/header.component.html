@@ -1,7 +1,15 @@
 
 <div div class = "header">
-    <img src="../assets/images/logo.png">  
-    <input type="text"  [(ngModel)]="ciudad"/>
-    <button (click)='SearchCity()'>Buscar</button>
+
+    <div class="section">
+        <a href="/"><div class="image"><img src="../assets/images/logo.png"></div></a>
+    </div>
+    <div class="searcher">
+        <div class = flex>
+            <input type="text"  placeholder = "Start your search"  [(ngModel)]="ciudad"/>
+            <button (click)='SearchCity()'></button>
+        </div>
+    </div> 
+    
 </div>
 

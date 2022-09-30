@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ListModuleRoutingModule } from './list-module-routing.module';
 import { ListComponentComponent } from './list-component/list-component.component';
+import { DetailModuleModule } from '../detail-module/detail-module.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ListComponentComponent } from './list-component/list-component.componen
   ],
   imports: [
     CommonModule,
-    ListModuleRoutingModule
+    ListModuleRoutingModule,
+    DetailModuleModule,
   ]
 })
 export class ListModuleModule { }

@@ -13,32 +13,26 @@ export class HeaderComponent implements OnInit {
   @Output() getCoor: EventEmitter<any> = new EventEmitter();
 
   //ciudad para search
-  ciudad: any;
+  ciudad: string = "";
 
 
-  constructor(private getCity: GetCoordenatesFromTextService) { 
-
-    this.ciudad = "MALAGA"
-
-  }
+  constructor(private getCity: GetCoordenatesFromTextService) { }
 
   ngOnInit(): void {
   }
 
   SearchCity(){
 
-    console.log("Searching city...");
+    if(this.ciudad){
+      console.log("Searching city...");
 
       this.getCity.getCoordenates(this.ciudad)
       .subscribe(k =>{
-
         console.log("COOR", k.results[0].locations[0].latLng);
-
         let sendCoor = k.results[0].locations[0].latLng;
-        
-        
-
       });
+    }
+      
   }
 
     /**
