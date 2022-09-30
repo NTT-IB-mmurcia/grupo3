@@ -7,7 +7,7 @@ import { DetailComponentComponent } from './detail-component/detail-component.co
 
 @NgModule({
   declarations: [
-    DetailComponentComponent
+    DetailComponentComponent,
   ],
   imports: [
     CommonModule,

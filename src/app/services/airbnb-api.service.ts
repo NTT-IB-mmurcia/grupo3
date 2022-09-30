@@ -27,10 +27,8 @@ export class AirbnbApiService {
     window.navigator.geolocation.getCurrentPosition((position) => {
       geoLocation.position.lat = position.coords.latitude;
       geoLocation.position.lng = position.coords.longitude;
-    }
-    
+    })
     return this.http.post<Detail>(this.searchURL, geoLocation);
-
   }
 }
 
