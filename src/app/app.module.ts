@@ -8,10 +8,17 @@ import { ListModuleModule } from './list-module/list-module.module';
 import { DetailModuleModule } from './detail-module/detail-module.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/controllers/header.component';
+import { FormsModule } from '@angular/forms';
+
+//import { GoogleMapsModule } from '@angular/google-maps';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     ListModuleModule,
     DetailModuleModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
