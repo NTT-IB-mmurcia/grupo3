@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {  Observable, switchMap } from 'rxjs';
 import { Detail } from '../models/detail-model';
 
 @Injectable({
@@ -17,18 +17,28 @@ export class AirbnbApiService {
     return this.http.get<Detail>(this.detailURL + id)
   }
 
-  getList() {
-    let geoLocation = {
-      "position": {
-          "lat": 41.390205,
-          "lng": 2.154007
-      }
-    }
-    window.navigator.geolocation.getCurrentPosition((position) => {
-      geoLocation.position.lat = position.coords.latitude;
-      geoLocation.position.lng = position.coords.longitude;
+  getCurrentPosition(): Observable<GeolocationPosition>{
+    return new Observable(subscriber => {
+      window.navigator.geolocation.getCurrentPosition((position) => {
+        subscriber.next(position);
+        subscriber.complete()
+      })
     })
-    return this.http.post<Detail>(this.searchURL, geoLocation);
+  }
+
+  getRoomListByCurrentPosition(): Observable<Detail[]> {
+    return this.getCurrentPosition()
+      .pipe(
+        switchMap(pos => {
+          const body = {
+            position: {
+              lat: pos.coords.latitude,
+              lng: pos.coords.longitude
+            }
+          }
+          return this.http.post<Detail[]>(this.searchURL, body)
+        })
+      )
   }
 }
 
