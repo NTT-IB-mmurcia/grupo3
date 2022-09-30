@@ -1,0 +1,96 @@
+.module {
+    color:gray;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.module .section {
+    margin: 20px 0px 10px 0px; 
+    border-bottom: 2px solid whitesmoke;
+    padding-bottom: 20px;
+}
+
+.module .section .intro{
+    position: relative;
+}
+
+.module .section .intro .intro_name .name {
+    font-size: 30px;
+    color:black;
+}
+
+.module .section .intro .intro_name .review span.value{
+    margin-right: 15px;
+}
+.module .section .intro .intro_name .review span.totals{
+    margin-right: 25px;
+    text-decoration: underline;
+}
+.module .section .intro .intro_name .review span.street{
+    margin-right: 15px;
+    text-decoration: underline;
+}
+.module .section .intro .intro_share {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.module .section .image img{
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.module .section .more {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.module .section .more .util {
+    max-width: 700px;
+    margin: 0px 20px 0px 0px;
+}
+.module .section .more .form {
+    display: flex;
+    align-items: center;
+}
+.module .section .more .form form{
+    width: 300px;
+    height: 400px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    border-radius: 5px
+}
+.module .section .more .util .util_row{
+    padding: 20px 20px 20px 0px;
+}
+.module .section .more .util .util_row .flex{
+    display: flex;
+    flex-direction: row;    
+}
+
+
+.module .section .more .util .util_row .flex img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 30px;
+}
+
+.border_bottom {
+    border-bottom: 2px solid whitesmoke;
+}
+
+.title {
+    color: black;
+    font-size: 25px;
+}
+
+.module .section_map {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

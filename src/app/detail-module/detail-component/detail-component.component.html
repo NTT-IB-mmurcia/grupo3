@@ -1,1 +1,55 @@
-<p>detail-component works!</p>
+<ng-container *ngIf = "detail">
+    <div class="module">
+        <div class="section">
+            <div class = "intro">
+                <div class="intro_name">
+                    <div class="name">{{detail.name}}</div>
+                    <div class="review">
+                        <span class="value">★5·{{detail.number_of_reviews}} evaluations</span>
+                        <span class="street">{{detail.address.street}}</span>
+                    </div>
+                </div>
+                <div class="intro_share">⊛Share    ❤Save</div>
+            </div>
+            <div class = "image">
+                <img src = "{{detail.images.picture_url}}">
+            </div>
+            <div class="more">
+                <div class="util">
+                    <div class = "util_row border_bottom ">
+                        <div class="flex">
+                            <div class="text ">
+                                <div class = "title">
+                                    {{detail.room_type}}: {{detail.property_type}}. Host: {{detail.host.host_name}}
+                                </div>
+                                <div>
+                                    {{detail.accommodates}} guests·{{detail.bedrooms}} rooms·{{detail.beds}} beds·{{detail.bathrooms.$numberDecimal}} baths
+                                </div>
+                            </div>
+                             <img  class = "image_" src = "{{detail.host.host_thumbnail_url}}">
+                        </div>
+                    </div>
+                    <div class = "util_row border_bottom">Cancellation policiy: {{detail.cancellation_policy}}</div>
+                    <div class = "util_row">{{detail.summary}}</div>
+                </div>
+                <div class="form"><form></form></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="title">No reviews (yet)</div>
+            
+        </div>
+
+        <div class="section section_map">
+            <div class="title">Where you’ll be</div>
+            <div class="map"></div>
+            <div class="street_map">{{detail.address.street}}</div>
+        </div>
+
+        <div class="section">
+            OTHER SECTION
+        </div>
+    </div>
+</ng-container>
+
