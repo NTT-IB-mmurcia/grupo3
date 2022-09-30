@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AirbnbApiService } from '../../services/airbnb-api.service';
+import { Detail } from '../../models/detail-model';
 @Component({
   selector: 'app-list-component',
   templateUrl: './list-component.component.html',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponentComponent implements OnInit {
 
-  constructor() { }
+  details: Detail[]=[];
 
-  ngOnInit(): void {
-  }
+  constructor(private airbnbApiService: AirbnbApiService) { }
+
+    ngOnInit(): void {
+      this.getList();
+      console.log(this.details)
+    }
+
+
+    getList(): void {
+      this.airbnbApiService.getRoomListByCurrentPosition()
+          .subscribe(details => this.details = details);
+    }
 
 }
