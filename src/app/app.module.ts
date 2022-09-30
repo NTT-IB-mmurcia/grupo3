@@ -8,7 +8,7 @@ import { ListModuleModule } from './list-module/list-module.module';
 import { DetailModuleModule } from './detail-module/detail-module.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/controllers/header.component';
 import { FormsModule } from '@angular/forms';
 
 
