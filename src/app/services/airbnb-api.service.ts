@@ -16,7 +16,6 @@ export class AirbnbApiService {
   getDetailById(id : string) : Observable<Detail>{
     return this.http.get<Detail>(this.detailURL + id)
   }
-
 }
 
 
