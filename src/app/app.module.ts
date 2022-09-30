@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/controllers/header.component';
 import { FormsModule } from '@angular/forms';
 
+//import { GoogleMapsModule } from '@angular/google-maps';
+
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     ListModuleModule,
     DetailModuleModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
