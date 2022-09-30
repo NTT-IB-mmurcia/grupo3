@@ -1,12 +1,12 @@
 .header {
     border-bottom: 2px solid whitesmoke;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
 .header .section { 
-    max-width:1020px;
+    min-width: auto;
 }
 
 .header .searcher {
@@ -38,11 +38,16 @@
 }
 
 
-.header .section .image {
-    width: 1020px;
-}
+
 
 .header .section .image img {
     margin: 20px 0px;
     width: 100px;
+}
+
+@media (max-width: 600px) {
+    .header .section .image img {
+        margin: 20px 0px;
+        width: 29px;
+    }
 }
