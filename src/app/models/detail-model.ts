@@ -80,6 +80,8 @@ export interface Detail {
     host_total_listings_count: number;
     host_url:                  string;
     host_verifications:        string[];
+    host_response_rate:        string;
+    host_response_time:        string;
    }
    
    export interface Images {
