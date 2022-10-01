@@ -26,7 +26,17 @@
 }
 
 .header .searcher input {
+    padding: 2px 7px;
     border: none;
+    margin-right: 20px;
+    border-radius: 5px;
+    color: gray;
+}
+
+.header .searcher input:focus {
+    outline: none;
+    border:1.5px solid #ff385c;
+
 }
 
 .header .searcher button {

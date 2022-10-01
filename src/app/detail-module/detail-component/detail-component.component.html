@@ -1,11 +1,13 @@
 <ng-container *ngIf = "detail">
     <div class="module">
-        <div class="section">
+    <!--INIT SECTION-->
+        <div class="section intro_section">
             <div class = "intro">
                 <div class="intro_name">
                     <div class="name">{{detail.name}}</div>
                     <div class="review">
-                        <span class="value">★5·{{detail.number_of_reviews}} evaluations</span>
+                        <span *ngIf = "detail.review_scores.review_scores_rating" >★{{detail.review_scores.review_scores_rating/10}}·</span>
+                        <span class="value">{{detail.number_of_reviews}} evaluations</span>
                         <span class="street">{{detail.address.street}}</span>
                     </div>
                 </div>
@@ -26,30 +28,106 @@
                                     {{detail.accommodates}} guests·{{detail.bedrooms}} rooms·{{detail.beds}} beds·{{detail.bathrooms.$numberDecimal}} baths
                                 </div>
                             </div>
-                             <img  *ngIf = "detail.host.host_has_profile_pic" class = "image_" src = "{{detail.host.host_thumbnail_url}}">
+                             <img  *ngIf = "detail.host.host_has_profile_pic" class = "image_" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'">
                         </div>
                     </div>
-                    <div class = "util_row border_bottom">Cancellation policiy: {{detail.cancellation_policy}}</div>
+                    <div class = "util_row border_bottom">Cancellation policy: {{detail.cancellation_policy}}</div>
                     <div class = "util_row">{{detail.summary}}</div>
                 </div>
                 <div class="form"><form></form></div>
             </div>
         </div>
-
-        <div class="section">
-            <div class="title">No reviews (yet)</div>
+    <!--REVIEW SECTION-->
+        <div class="section review_section">
+            <div *ngIf="detail.reviews.length > 0;then yesreviews else notreviews"></div>
+            <ng-template #yesreviews>
+                <div class="title">
+                    <span >★{{detail.review_scores.review_scores_rating/10}}·</span>
+                    <span class="value">{{detail.number_of_reviews}} evaluations</span>
+                </div>
+                <div class="score_list">
+                    
+                    <div class="score">
+                        <span class="score_name">Cleanliness</span>
+                        <div class="score_value">
+                            <progress id="file" max="10" value="{{detail.review_scores.review_scores_cleanliness}}"></progress>
+                            <span>{{detail.review_scores.review_scores_cleanliness}}</span>
+                        </div>  
+                    </div>
+                    <div class="score">
+                        <span class="score_name">Accuracy</span>
+                        <div class="score_value">
+                            <progress id="file" max="10" value="{{detail.review_scores.review_scores_accuracy}}"></progress>
+                            <span>{{detail.review_scores.review_scores_accuracy}}</span>  
+                        </div> 
+                    </div>
+                    <div class="score">
+                        <span class="score_name">Communication</span>
+                        <div class="score_value">
+                            <progress id="file" max="10" value="{{detail.review_scores.review_scores_communication}}"></progress>
+                            <span>{{detail.review_scores.review_scores_communication}}</span>
+                        </div> 
+                    </div>
+                    <div class="score">
+                        <span class="score_name">Location</span>
+                        <div class="score_value">
+                            <progress id="file" max="10" value="{{detail.review_scores.review_scores_location}}"></progress>
+                            <span>{{detail.review_scores.review_scores_location}}</span>
+                        </div>
+                        
+                    </div>
+                    <div class="score">
+                        <span class="score_name">Checkin</span>
+                        <div class="score_value">
+                            <progress id="file" max="10" value="{{detail.review_scores.review_scores_checkin}}"></progress>
+                            <span>{{detail.review_scores.review_scores_checkin}}</span>
+                        </div>
+                        
+                    </div>
+                    <div class="score">
+                        <span class="score_name">Value</span>
+                        <div class="score_value">
+                            <progress id="file" max="10" value="{{detail.review_scores.review_scores_value}}"></progress>
+                            <span>{{detail.review_scores.review_scores_value}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review_list">
+                    <div class = "review" *ngFor = "let review of detail.reviews.slice(0, 6)">
+                        <div class = "review_data">
+                            <img class = "rewiew_image" src = "/assets/images/default.png">
+                            <div class="review_name">
+                                <div class = "title_2">{{review.reviewer_name}}</div>
+                                <div>Se {{review.date | date}}</div>
+                            </div>
+                            
+                        </div>
+                        <div class = "review_comment">
+                            {{review.comments}}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf = "detail.number_of_reviews > 6">
+                    <button class = "button">View all {{detail.number_of_reviews}} reviews</button>
+                </div>
+            </ng-template>
+            <ng-template #notreviews>
+                <div class="title">No reviews (yet)</div>
+            </ng-template>
+        
             
+               
         </div>
-
+    <!--MAP SECTION-->
         <div class="section section_map">
             <div class="title">Where you’ll be</div>
             <div class="map"></div>
             <div class="street_map">{{detail.address.street}}</div>
         </div>
-
+    <!--HOST SECTION-->
         <div class="section section_host">
             <div class = "host host_intro">
-                <img  *ngIf = "detail.host.host_has_profile_pic" class = "host_image" src = "{{detail.host.host_thumbnail_url}}">
+                <img  *ngIf = "detail.host.host_has_profile_pic" class = "host_image" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'">
                 <div class="host_name">
                     <div class = "title">Hosteded by {{detail.host.host_name}}</div>
                     <div>Se registró en febrero 2019</div>
@@ -67,7 +145,7 @@
             <div class = "host host_time" *ngIf = "detail.host.host_response_time">Response time: {{detail.host.host_response_time}}</div>
             <div class = "host" *ngIf = "detail.host.host_about">{{detail.host.host_about}}</div>
             <div class = "host">
-                <a href = "{{detail.host.host_url}}"><button>Contact host</button></a>
+                <a href = "{{detail.host.host_url}}"><button class = "button">Contact host</button></a>
             </div>
         </div>
     </div>

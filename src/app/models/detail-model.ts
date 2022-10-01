@@ -30,7 +30,7 @@ export interface Detail {
     price:                 Bathrooms;
     property_type:         string;
     review_scores:         ReviewScores;
-    reviews:               any[];
+    reviews:               Review[];
     room_type:             string;
     security_deposit:      Bathrooms;
     space:                 string;
@@ -91,6 +91,21 @@ export interface Detail {
     xl_picture_url: string;
    }
    
+   export interface Review {
+    _id:           string;
+    comments:      string;
+    date:          Date;
+    listing_id:    string;
+    reviewer_id:   string;
+    reviewer_name: string;
+   }
    export interface ReviewScores {
+    review_scores_accuracy:      number;
+    review_scores_checkin:       number;
+    review_scores_cleanliness:   number;
+    review_scores_communication: number;
+    review_scores_location:      number;
+    review_scores_rating:        number;
+    review_scores_value:         number;
    }
    

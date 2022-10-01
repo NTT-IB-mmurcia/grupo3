@@ -8,81 +8,10 @@
 }
 
 .module .section {
-    min-width: auto;
+    max-width: 1020px;
     margin: 20px 0px 10px 0px; 
     border-bottom: 2px solid whitesmoke;
     padding-bottom: 20px;
-}
-
-.module .section .intro{
-    position: relative;
-}
-
-.module .section .intro .intro_name .name {
-    font-size: 30px;
-    color:black;
-}
-
-.module .section .intro .intro_name .review span.value{
-    margin-right: 15px;
-}
-.module .section .intro .intro_name .review span.totals{
-    margin-right: 25px;
-    text-decoration: underline;
-}
-.module .section .intro .intro_name .review span.street{
-    margin-right: 15px;
-    text-decoration: underline;
-}
-.module .section .intro .intro_share {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.module .section .image img{
-    width: 250px;
-    height: 250px;
-    border-radius: 5px;
-    margin-top: 15px;
-}
-.module .section .more {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.module .section .more .util {
-    max-width: 700px;
-    margin: 0px 20px 0px 0px;
-}
-.module .section .more .form {
-    display: flex;
-    align-items: center;
-}
-.module .section .more .form form{
-    width: 300px;
-    height: 400px;
-    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
-    border-radius: 5px
-}
-.module .section .more .util .util_row{
-    padding: 20px 20px 20px 0px;
-}
-.module .section .more .util .util_row .flex{
-    display: flex;
-    flex-direction: row;    
-}
-
-
-.module .section .more .util .util_row .flex img{
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    margin-left: 30px;
-}
-
-.border_bottom {
-    border-bottom: 2px solid whitesmoke;
 }
 
 .title {
@@ -94,6 +23,141 @@
     color: black;
     font-size: 20px;
 }
+
+.border_bottom {
+    border-bottom: 2px solid whitesmoke;
+}
+
+.module .section .intro{
+    position: relative;
+}
+
+.module .intro_section .intro .intro_name .name {
+    font-size: 30px;
+    color:black;
+}
+
+.module .intro_section .intro .intro_name .review span.value{
+    margin-right: 15px;
+}
+.module .intro_section .intro .intro_name .review span.totals{
+    margin-right: 25px;
+    text-decoration: underline;
+}
+.module .intro_section .intro .intro_name .review span.street{
+    margin-right: 15px;
+    text-decoration: underline;
+}
+.module .intro_section .intro .intro_share {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.module .intro_section .image img{
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.module .intro_section .more {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.module .intro_section .more .util {
+    max-width: 700px;
+    margin: 0px 20px 0px 0px;
+}
+.module .intro_section .more .form {
+    display: flex;
+    align-items: center;
+}
+.module .intro_section .more .form form{
+    width: 300px;
+    height: 400px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    border-radius: 5px
+}
+.module .intro_section .more .util .util_row{
+    padding: 20px 20px 20px 0px;
+}
+.module .intro_section .more .util .util_row .flex{
+    display: flex;
+    flex-direction: row;    
+}
+
+.module .intro_section .more .util .util_row .flex img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 30px;
+}
+
+.module .review_section .score_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.module .review_section .score {
+    flex: 1;
+    max-width: 100%;
+    min-width: 400px;
+    height: 20px;
+    margin: 10px 20px 10px 0px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+progress {
+    -webkit-appearance: none;
+    height: 4px;
+    margin: 4px 10px 0px 0px;
+}
+  
+::-webkit-progress-bar  {
+    background-color: whitesmoke;
+}
+::-webkit-progress-value {
+    background-color: black;
+}
+
+.module .review_section .review_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.module .review_section .review {
+    flex: 1;
+    max-width: 100%;
+    min-width: 400px;
+    height: 150px;
+    margin: 10px 30px 10px 0px;
+}
+
+.module .review_section .review .review_data {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.module .review_section .review .review_data img{
+    border-radius: 15px;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
 
 .module .section_map {
     display: flex;
@@ -120,13 +184,15 @@
 .module .section_host .host_intro img{
     border-radius: 25px;
     margin-right: 20px;
+    width: 50px;
+    height: 50px;
 }
 
 .module .section_host .host_info span{
     margin-right: 10px;
 }
 
-.module .section_host button {
+button.button {
     margin-top: 5px;
     padding: 10px 20px;
     background-color: white;
