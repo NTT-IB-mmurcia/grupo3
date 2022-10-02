@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { AirbnbApiService } from 'src/app/services/airbnb-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Detail } from 'src/app/models/detail-model';

@@ -121,8 +121,15 @@
     <!--MAP SECTION-->
         <div class="section section_map">
             <div class="title">Where you’ll be</div>
-            <div class="map"></div>
-            <div class="street_map">{{detail.address.street}}</div>
+            <div class = "view_map">
+                <app-map-component [position] = "detail.address.location.coordinates"></app-map-component>
+            </div>
+            <div class="street_item street_map">{{detail.address.street}}</div>
+            <div class="street_item substreet_map">
+                <span *ngIf = "detail.address.suburb">{{detail.address.suburb}}. </span>
+                <span *ngIf = "detail.address.government_area">{{detail.address.government_area}}.</span> 
+            </div>
+            <div class="street_item link">View more ></div>
         </div>
     <!--HOST SECTION-->
         <div class="section section_host">

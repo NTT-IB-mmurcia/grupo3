@@ -24,6 +24,12 @@
     font-size: 20px;
 }
 
+.link {
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 .border_bottom {
     border-bottom: 2px solid whitesmoke;
 }
@@ -104,7 +110,7 @@
 .module .review_section .score {
     flex: 1;
     max-width: 100%;
-    min-width: 300px;
+    min-width: 350px;
     height: 20px;
     margin: 10px 20px 10px 0px;
 
@@ -162,10 +168,27 @@ progress {
 }
 
 
-.module .section_map {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+.module .section_map .view_map {
+    margin: 15px 0px 10px 0px;
+    height: 450px;
+    width: 100%;
+    border: 2px solid whitesmoke;
+    border-radius: 200px;
+}
+
+.module .section_map .street_item {
+    margin-bottom: 5px;
+}
+
+.module .section_map .street_map {
+    color: black;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .module .section_map .view_map{
+        height: 200px;
+    }
 }
 
 .module .section_host {
