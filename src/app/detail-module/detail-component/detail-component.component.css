@@ -104,7 +104,7 @@
 .module .review_section .score {
     flex: 1;
     max-width: 100%;
-    min-width: 400px;
+    min-width: 300px;
     height: 20px;
     margin: 10px 20px 10px 0px;
 
@@ -112,7 +112,6 @@
     flex-direction: row;
     justify-content: space-between;
 }
-
 
 progress {
     -webkit-appearance: none;
@@ -137,8 +136,7 @@ progress {
     flex: 1;
     max-width: 100%;
     min-width: 400px;
-    height: 150px;
-    margin: 10px 30px 10px 0px;
+    margin: 15px 30px 15px 0px;
 }
 
 .module .review_section .review .review_data {
@@ -155,8 +153,13 @@ progress {
     height: 30px;
 }
 
-
-
+@media (max-width: 600px) {
+    .module .review_section .score,
+    .module .review_section .review
+    {
+        min-width: 80%;
+    }
+}
 
 
 .module .section_map {
