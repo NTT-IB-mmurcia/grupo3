@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-.header .section { 
+.header .section {
     min-width: auto;
 }
 
@@ -53,6 +53,7 @@
 .header .section .image img {
     margin: 20px 0px;
     width: 100px;
+    margin-left: 20px;
 }
 
 @media (max-width: 600px) {
