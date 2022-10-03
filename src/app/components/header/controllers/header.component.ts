@@ -3,7 +3,7 @@ import { GetCoordenatesFromTextService } from '../../../services/get-coordenates
 import { Observable, of } from 'rxjs';
 import { DOCUMENT } from '@angular/common'; 
 import { Inject } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header', 
@@ -12,7 +12,7 @@ import { Inject } from '@angular/core';
 })
 export class HeaderBuscadorComponent implements OnInit {
   
-  @Output() getCoor: EventEmitter<any> = new EventEmitter();
+  @Output() childToParent = new EventEmitter<String>()
 
   //ciudad para search
   ciudad: string = "";
@@ -21,7 +21,8 @@ export class HeaderBuscadorComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) 
     private document: Document,
-    private getCity: GetCoordenatesFromTextService)
+    private getCity: GetCoordenatesFromTextService,
+    private router: Router)
     { 
 
       
@@ -30,11 +31,8 @@ export class HeaderBuscadorComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
-    
+ngOnInit(): void {
   console.log("ngOnInit");  
-
-
 }
 
   
@@ -79,7 +77,13 @@ export class HeaderBuscadorComponent implements OnInit {
         console.log("COOR", k.results[0].locations[0].latLng);
         let coordenadasDeCiudad = k.results[0].locations[0].latLng;
 
-        //crear observable
+        //this.childToParent.emit(coordenadasDeCiudad);
+
+        this.router.navigate(
+          [''],
+          { queryParams: { "lat" : coordenadasDeCiudad.lat,  
+                           "lng" : coordenadasDeCiudad.lng} }
+        );
 
       });
     }

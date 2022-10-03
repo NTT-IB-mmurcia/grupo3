@@ -14,7 +14,6 @@ export class MapComponentComponent implements OnInit, AfterViewInit  {
   constructor() { }
 
   private initMap(): void {
-    console.log(this.position[0] + " - " + this.position [1]);
     this.map = L.map('map', {
       center: [ this.position[1], this.position[0] ],
       zoom: 10
@@ -38,7 +37,6 @@ export class MapComponentComponent implements OnInit, AfterViewInit  {
   }
 
   ngAfterViewInit(): void {
-    console.log("holaaa");
     this.initMap();
   }
 

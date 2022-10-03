@@ -1,15 +1,15 @@
-<app-header></app-header>
+
 <div *ngIf="details.length == 0">
   <h1>NO SE ENCONTRARON RESULTADOS :(</h1>
 </div>
 <div *ngIf="details.length > 0" class="container">
   <div class="row">
-<div *ngFor="let detailList of details" class="col-sm-3">
-  <div><img class="image" src="{{detailList.images.picture_url}}" alt="image"></div>
-  <div class="adress">{{detailList.address.street}}
-  <div class="score"> ★ {{detailList.review_scores.review_scores_rating}}</div></div>
-  <div class="name">{{detailList.name}}</div>
-  <div class="price"><b>${{detailList.price.$numberDecimal}}</b>/noche</div>
+<div (click)="goToDetails(detailList._id)"*ngFor="let detailList of details" class="col-sm-3">
+    <div><img class="image cursor" src="{{detailList.images.picture_url}}" alt="image"></div>
+    <div class="adress">{{detailList.address.street}}</div>
+    <div class="name">{{detailList.name}}</div>
+    <div class="price"><b>${{detailList.price.$numberDecimal}}</b>/noche</div>
+
 </div>
 </div>
 </div>
