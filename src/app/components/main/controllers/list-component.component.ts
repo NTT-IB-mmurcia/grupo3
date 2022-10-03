@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AirbnbApiService } from '../../../services/airbnb-api.service';
+import { ActivatedRoute } from '@angular/router';
 //import { Detail } from '../../detail/controllers/detail-component.component';
 //import {  } from '../../detail/controllers/detail-component.component';
 //import { Detail } from '../../detail/controllers/detail-component.component';
@@ -12,12 +13,14 @@ import { Detail } from 'src/app/models/detail-model'; //es el modelo??
   styleUrls: ['../styles/list-component.component.css']
 })
 export class ListComponentComponent implements OnInit {
-
   details: Detail[]=[];
-
-  constructor(private airbnbApiService: AirbnbApiService) { }
+  constructor(private airbnbApiService: AirbnbApiService, private route: ActivatedRoute) { }
 
     ngOnInit(): void {
+      this.route.queryParams.subscribe((params: any) => {
+        console.log(params);
+      });
+
       this.getList();
       console.log(this.details)
     }
@@ -25,7 +28,7 @@ export class ListComponentComponent implements OnInit {
 
     getList(): void {
       this.airbnbApiService.getRoomListByCurrentPosition()
-          .subscribe(details => this.details = details);
+          .subscribe((details: Detail[]) => this.details = details);
     }
 
 }
