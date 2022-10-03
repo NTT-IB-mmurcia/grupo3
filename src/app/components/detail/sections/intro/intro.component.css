@@ -40,7 +40,7 @@
 .intro_section .more .util {
     flex: 1;
     max-width: 100%;
-    min-width: 350px;
+    min-width: 394px;
     margin: 0px 20px 0px 0px;
 }
 
@@ -130,6 +130,17 @@
         min-width: 100%;
     }
    
+}
+
+
+@media (max-width: 768px) {
+    .intro_section .more .form .form_box {
+        min-width: 100%;
+    }
+
+    .intro_section .more .form {
+        width: 100%;
+    }
 }
 
 .intro_section .more .util .util_row{
