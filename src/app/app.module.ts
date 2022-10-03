@@ -11,9 +11,6 @@ import { ListModuleModule } from './components/main/list-module.module';
 import { DetailModuleModule } from './components/detail/detail-module.module';
 import { HeaderBuscadorComponent } from './components/header/controllers/header.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
