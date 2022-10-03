@@ -14,7 +14,7 @@
                 <div class="intro_share">⊛Share    ❤Save</div>
             </div>
             <div class = "image">
-                <img src = "{{detail.images.picture_url}}">
+                <img src = "{{detail.images.picture_url}}" alt="imageDetail">
             </div>
             <div class="more">
                 <div class="util">
@@ -28,7 +28,7 @@
                                     {{detail.accommodates}} guests·{{detail.bedrooms}} rooms·{{detail.beds}} beds·{{detail.bathrooms.$numberDecimal}} baths
                                 </div>
                             </div>
-                             <img  *ngIf = "detail.host.host_has_profile_pic" class = "image_" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'">
+                             <img  *ngIf = "detail.host.host_has_profile_pic" class = "image_" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'" alt="detailHost">
                         </div>
                     </div>
                     <div class = "util_row border_bottom">Cancellation policy: {{detail.cancellation_policy}}</div>
@@ -56,21 +56,21 @@
                         <div class="score_value">
                             <progress id="file" max="10" value="{{detail.review_scores.review_scores_cleanliness}}"></progress>
                             <span>{{detail.review_scores.review_scores_cleanliness}}</span>
-                        </div>  
+                        </div>
                     </div>
                     <div class="score">
                         <span class="score_name">Accuracy</span>
                         <div class="score_value">
                             <progress id="file" max="10" value="{{detail.review_scores.review_scores_accuracy}}"></progress>
-                            <span>{{detail.review_scores.review_scores_accuracy}}</span>  
-                        </div> 
+                            <span>{{detail.review_scores.review_scores_accuracy}}</span>
+                        </div>
                     </div>
                     <div class="score">
                         <span class="score_name">Communication</span>
                         <div class="score_value">
                             <progress id="file" max="10" value="{{detail.review_scores.review_scores_communication}}"></progress>
                             <span>{{detail.review_scores.review_scores_communication}}</span>
-                        </div> 
+                        </div>
                     </div>
                     <div class="score">
                         <span class="score_name">Location</span>
@@ -78,7 +78,7 @@
                             <progress id="file" max="10" value="{{detail.review_scores.review_scores_location}}"></progress>
                             <span>{{detail.review_scores.review_scores_location}}</span>
                         </div>
-                        
+
                     </div>
                     <div class="score">
                         <span class="score_name">Checkin</span>
@@ -86,7 +86,7 @@
                             <progress id="file" max="10" value="{{detail.review_scores.review_scores_checkin}}"></progress>
                             <span>{{detail.review_scores.review_scores_checkin}}</span>
                         </div>
-                        
+
                     </div>
                     <div class="score">
                         <span class="score_name">Value</span>
@@ -96,16 +96,16 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="review_list">
                     <div class = "review" *ngFor = "let review of detail.reviews.slice(0, 6)">
                         <div class = "review_data">
-                            <img class = "rewiew_image" src = "/assets/images/default.png">
+                            <img class = "rewiew_image" src = "/assets/images/default.png" alt="imageDefault">
                             <div class="review_name">
                                 <div class = "title_2">{{review.reviewer_name}}</div>
                                 <div>Se {{review.date | date}}</div>
                             </div>
-                            
+
                         </div>
                         <div class = "review_comment">
                             {{review.comments}}
@@ -119,9 +119,9 @@
             <ng-template #notreviews>
                 <div class="title">No reviews (yet)</div>
             </ng-template>
-        
-            
-               
+
+
+
         </div>
     <!--MAP SECTION-->
         <div class="section section_map">
@@ -132,14 +132,14 @@
             <div class="street_item street_map">{{detail.address.street}}</div>
             <div class="street_item substreet_map">
                 <span *ngIf = "detail.address.suburb">{{detail.address.suburb}}. </span>
-                <span *ngIf = "detail.address.government_area">{{detail.address.government_area}}.</span> 
+                <span *ngIf = "detail.address.government_area">{{detail.address.government_area}}.</span>
             </div>
             <div class="street_item link">View more ></div>
         </div>
     <!--HOST SECTION-->
         <div class="section section_host">
             <div class = "host host_intro">
-                <img  *ngIf = "detail.host.host_has_profile_pic" class = "host_image" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'">
+                <img  *ngIf = "detail.host.host_has_profile_pic" class = "host_image" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'" alt="imageDefault">
                 <div class="host_name">
                     <div class = "title">Hosteded by {{detail.host.host_name}}</div>
                     <div>Se registró en febrero 2019</div>

@@ -8,10 +8,15 @@
 }
 .adress{
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 }
 .card{
   padding: 20px;
 }
 .container{
   max-width: 100%;
+}
+i{
+  width: 10px;
 }
