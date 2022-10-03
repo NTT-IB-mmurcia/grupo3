@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'grupo3';
 
+  ngOnInit(): void {
+    console.log("*** CARGANDO app.component.ts ***");
+  }
+
+
   getCoor(){
     
   }

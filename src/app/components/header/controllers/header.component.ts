@@ -5,10 +5,10 @@ import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-header', 
-  templateUrl: '../assets/header.component.html',
+  templateUrl: '../assets/header-buscador.html',
   styleUrls: ['../styles/header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderBuscadorComponent implements OnInit {
   
   @Output() getCoor: EventEmitter<any> = new EventEmitter();
 
@@ -29,7 +29,10 @@ export class HeaderComponent implements OnInit {
       this.getCity.getCoordenates(this.ciudad)
       .subscribe(k =>{
         console.log("COOR", k.results[0].locations[0].latLng);
-        let sendCoor = k.results[0].locations[0].latLng;
+        let coordenadasDeCiudad = k.results[0].locations[0].latLng;
+
+        //crear observable
+
       });
     }
       

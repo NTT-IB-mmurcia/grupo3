@@ -3,8 +3,8 @@ import * as L from 'leaflet';
 
 @Component({
   selector: 'app-map-component',
-  templateUrl: './map-component.component.html',
-  styleUrls: ['./map-component.component.css']
+  templateUrl: '../assets/map-component.component.html',
+  styleUrls: ['../styles/map-component.component.css']
 })
 export class MapComponentComponent implements OnInit, AfterViewInit  {
 

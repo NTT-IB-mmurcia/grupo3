@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetailComponentComponent } from './detail-component/detail-component.component';
+import { DetailComponentComponent } from './controllers/detail-component.component';
 
 const routes: Routes = [{path: '', component: DetailComponentComponent}];
 
