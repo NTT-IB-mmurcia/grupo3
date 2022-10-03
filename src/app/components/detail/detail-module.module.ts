@@ -4,6 +4,7 @@ import { DetailModuleRoutingModule } from './detail-module-routing.module';
 import { DetailComponentComponent } from './controllers/detail-component.component';
 import { MapComponentComponent } from '../map/controllers/map-component.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,7 +15,9 @@ import { MapComponentComponent } from '../map/controllers/map-component.componen
   ],
   imports: [
     CommonModule,
-    DetailModuleRoutingModule
+    DetailModuleRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class DetailModuleModule { }

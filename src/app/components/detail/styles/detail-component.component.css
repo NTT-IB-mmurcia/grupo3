@@ -82,23 +82,82 @@
 
 .module .intro_section .more .form {
     display: flex;
+    flex-direction: column;
     align-items: center;
-}
-.module .intro_section .more .form form{
-    padding: 10px;
-    min-width: 300px;
+    padding: 25px;
+    min-width: 260px;
     max-width: 100%;
-    height: 400px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     border-radius: 5px
 }
 
+.module .intro_section .more .form .form_intro{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.module .intro_section .more .form .form_intro .price_value {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.module .intro_section .more .form form {
+    width: 100%;
+;
+}
+.module .intro_section .more .form form input {
+    color: gray;
+    width: 48%;
+    height: 40px;
+}
+.module .intro_section .more .form form select {
+    color: gray;
+    width: 99%;
+    height: 40px;
+}
+.module .intro_section .more .form form button {
+    width: 98%;
+    height: 40px;
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff385c;
+}
+
+.module .intro_section .more .form .form_result {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.module .intro_section .more .form .form_result .data {
+    border-bottom: 2px solid whitesmoke;
+    padding-bottom: 10px;
+}
+
+.module .intro_section .more .form .form_result .total{
+    margin-top: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.module .intro_section .more .form .form_result .data_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 @media (max-width: 600px) {
-    .module .intro_section .more .util,
-    .module .intro_section .more .form {
+    .module .intro_section .more .util{
         min-width: 100%;
     }
-    
+   
 }
 
 .module .intro_section .more .util .util_row{
