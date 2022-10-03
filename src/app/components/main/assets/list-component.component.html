@@ -1,15 +1,16 @@
-<div *ngIf="details.length == 0; finded">
-<h1>NO SE ENCONTRARON RESULTADOS</h1>
-<!--<img src="assets/idk.PNG">-->
+<div *ngIf="details.length == 0">
+<h1>NO SE ENCONTRARON RESULTADOS :(</h1>
+
 </div>
 
 
-<ng-template #finded>
+<div *ngIf="details.length > 0">
   <div class="card" *ngFor="let detailList of details">
     <div class="image"> <img src="{{detailList.images.picture_url}}" alt="image"> </div>
     <div class="country">{{detailList.address.street}}</div>
     <div class="description">{{detailList.name}}</div>
     <div class="price">{{detailList.price.$numberDecimal}}</div>
   </div>  
-</ng-template>
+</div>
+
   
