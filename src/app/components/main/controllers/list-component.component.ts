@@ -19,7 +19,7 @@ export class ListComponentComponent implements OnInit {
 
     ngOnInit(): void {
       this.getList();
-      console.log(this.details)
+      console.log("detalles" + this.details)
 
       
     }
