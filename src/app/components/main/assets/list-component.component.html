@@ -1,3 +1,8 @@
 
 <app-header></app-header>
-<h1>SOY EL MAIN</h1>
+<div class="card" *ngFor="let detailList of details">
+  <div class="image"> <img src="{{detailList.images.picture_url}}" alt="image"> </div>
+  <div class="country">{{detailList.address.street}}</div>
+  <div class="description">{{detailList.name}}</div>
+  <div class="price">{{detailList.price.$numberDecimal}}</div>
+</div>
