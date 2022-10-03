@@ -2,6 +2,7 @@
 <div *ngIf="details.length == 0">
   <h1>NO SE ENCONTRARON RESULTADOS :(</h1>
 </div>
+
 <div *ngIf="details.length > 0" class="container">
   <div class="row">
 <div (click)="goToDetails(detailList._id)"*ngFor="let detailList of details" class="col-sm-3">
@@ -11,5 +12,6 @@
     <div class="price"><b>${{detailList.price.$numberDecimal}}</b>/noche</div>
 
 </div>
+
 </div>
 </div>
