@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AirbnbApiService } from '../../../services/airbnb-api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 //import { Detail } from '../../detail/controllers/detail-component.component';
 //import {  } from '../../detail/controllers/detail-component.component';
 //import { Detail } from '../../detail/controllers/detail-component.component';
@@ -14,13 +14,16 @@ import { Detail } from 'src/app/models/detail-model'; //es el modelo??
 })
 export class ListComponentComponent implements OnInit {
   details: Detail[]=[];
-  constructor(private airbnbApiService: AirbnbApiService, private route: ActivatedRoute) { }
+  constructor(
+    private airbnbApiService: AirbnbApiService, 
+    private route: ActivatedRoute,
+    private router: Router) { }
 
     ngOnInit(): void {
 
       this.route.queryParams.subscribe((params: any) => this.getList(params));
 
-      console.log(this.details)
+      //console.log(this.details)
       
     }
 
@@ -35,9 +38,20 @@ export class ListComponentComponent implements OnInit {
         lng: parseFloat(params.lng)
       };
 
+      console.log("*** RECIBIENDO COORDENADAS ***", params);
+
       this.airbnbApiService.getRoomListByCurrentPosition(coordenadas)
           .subscribe((details: Detail[]) => this.details = details);
     }
 
+    goToDetails(event : any){
+
+      console.log("*** goToDetails ***", event);
+
+      this.router.navigate(
+        [''],
+        event
+      );
+    }
 
 }
