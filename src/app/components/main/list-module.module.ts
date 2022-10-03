@@ -9,8 +9,8 @@ import { HeaderBuscadorComponent } from '../header/controllers/header.component'
 
 @NgModule({
   declarations: [
-    ListComponentComponent,
-    HeaderBuscadorComponent
+    HeaderBuscadorComponent,
+    ListComponentComponent
   ],
   imports: [
     FormsModule,

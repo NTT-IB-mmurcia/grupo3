@@ -20,6 +20,12 @@ export class ListComponentComponent implements OnInit {
     ngOnInit(): void {
       this.getList();
       console.log(this.details)
+
+      
+    }
+
+    childToParent( coordenadasDeCiudad: any){
+       console.log("*** RECIBIENDO COORDENADAS ***", coordenadasDeCiudad);
     }
 
 
@@ -27,5 +33,6 @@ export class ListComponentComponent implements OnInit {
       this.airbnbApiService.getRoomListByCurrentPosition()
           .subscribe(details => this.details = details);
     }
+
 
 }
