@@ -49,7 +49,7 @@ export class ListComponentComponent implements OnInit {
       console.log("*** goToDetails ***", event);
 
       this.router.navigate(
-        [''],
+        ['/details'],
         event
       );
     }
