@@ -43,8 +43,8 @@
                     </div>
                     <form [formGroup]="airbnForm" (ngSubmit)="onSubmit()">
                         <div class="dates">
-                            <input type = "date" placeholder="Start date" formControlName="start">
-                            <input type = "date" End date="Start date" formControlName="end">
+                            <input type = "date" placeholder="Check in" formControlName="start" type="text" onfocus="(this.type='date')">
+                            <input type = "date" placeholder="Checkout" formControlName="end"   type="text" onfocus="(this.type='date')">
                         </div>
                         <div class="guests">
                             <select name="guests" id="guests" placeholder = "Guests" formControlName="guests">
