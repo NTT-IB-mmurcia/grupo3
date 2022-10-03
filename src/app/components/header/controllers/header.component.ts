@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { GetCoordenatesFromTextService } from '../../../services/get-coordenates-from-text.service';
 import { Observable, of } from 'rxjs';
+import { DOCUMENT } from '@angular/common'; 
+import { Inject } from '@angular/core';
 
 
 @Component({
@@ -16,10 +18,56 @@ export class HeaderBuscadorComponent implements OnInit {
   ciudad: string = "";
 
 
-  constructor(private getCity: GetCoordenatesFromTextService) { }
+  constructor(
+    @Inject(DOCUMENT) 
+    private document: Document,
+    private getCity: GetCoordenatesFromTextService)
+    { 
+
+      
+    }
+
+
+
 
   ngOnInit(): void {
+    
+  console.log("ngOnInit");  
+
+
+}
+
+  
+  onClick(event: any) {
+    console.log("onClick");
+
+    if (event.key === "Enter") {
+      event.preventDefault();
+      let boton = this.document.getElementById("botonCiudad");
+      if(boton != null){
+        boton.click();
+      }
+    }
   }
+
+
+  ngAfterViewInit() {
+
+    setTimeout(() => {
+
+      let input = this.document.getElementById("inputCiudad");
+  
+      console.log("input", input);
+      
+      if(input != null){
+
+        input.addEventListener("keypress", this.onClick.bind(this));
+      }
+  
+    }, 0)
+  }
+
+
 
   SearchCity(){
 
