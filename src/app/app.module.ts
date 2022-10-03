@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ListModuleModule } from './components/main/list-module.module';
 import { DetailModuleModule } from './components/detail/detail-module.module';
+import { HeaderBuscadorComponent } from './components/header/controllers/header.component';
 
 
 
@@ -16,6 +17,7 @@ import { DetailModuleModule } from './components/detail/detail-module.module';
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderBuscadorComponent,
   ],
   imports: [
     BrowserModule,
