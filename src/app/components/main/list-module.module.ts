@@ -4,13 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { ListModuleRoutingModule } from './list-module-routing.module';
 import { ListComponentComponent } from './controllers/list-component.component';
 import { DetailModuleModule } from '../detail/detail-module.module';
-import { HeaderBuscadorComponent } from '../header/controllers/header.component';
-
 
 @NgModule({
   declarations: [
-    ListComponentComponent,
-    HeaderBuscadorComponent
+    ListComponentComponent
   ],
   imports: [
     FormsModule,
