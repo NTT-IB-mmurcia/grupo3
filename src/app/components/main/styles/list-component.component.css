@@ -1,0 +1,17 @@
+
+.image{
+  margin-top: 10px;
+  width: 400px;
+  height: 300px;
+  border-radius: 7px;
+
+}
+.adress{
+  font-weight: bold;
+}
+.card{
+  padding: 20px;
+}
+.container{
+  max-width: 100%;
+}
