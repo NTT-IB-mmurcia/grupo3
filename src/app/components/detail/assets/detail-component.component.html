@@ -7,7 +7,7 @@
                     <div class="name">{{detail.name}}</div>
                     <div class="review">
                         <span *ngIf = "detail.review_scores.review_scores_rating" >★{{detail.review_scores.review_scores_rating/10}}·</span>
-                        <span class="value">{{detail.number_of_reviews}} evaluations</span>
+                        <span class="value">{{detail.number_of_reviews}} reviews</span>
                         <span class="street">{{detail.address.street}}</span>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <div class="price"><span class = "price_value">{{detail.price.$numberDecimal}} $</span>/night</div>
                         <div class="score">
                             <span >★{{detail.review_scores.review_scores_rating/10}}·</span>
-                            <span class="value">{{detail.number_of_reviews}} evaluations</span>
+                            <span class="value">{{detail.number_of_reviews}} reviews</span>
                         </div>
                     </div>
                     <form [formGroup]="airbnForm" (ngSubmit)="onSubmit()">
@@ -79,7 +79,7 @@
             <ng-template #yesreviews>
                 <div class="title">
                     <span >★{{detail.review_scores.review_scores_rating/10}}·</span>
-                    <span class="value">{{detail.number_of_reviews}} evaluations</span>
+                    <span class="value">{{detail.number_of_reviews}} reviews</span>
                 </div>
                 <div class="score_list">
                     <div class="score">
