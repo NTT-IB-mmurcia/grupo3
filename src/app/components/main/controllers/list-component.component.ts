@@ -17,11 +17,8 @@ export class ListComponentComponent implements OnInit {
   constructor(private airbnbApiService: AirbnbApiService, private route: ActivatedRoute) { }
 
     ngOnInit(): void {
-      this.route.queryParams.subscribe((params: any) => {
-        console.log(params);
-      });
+      this.route.queryParams.subscribe((params: any) => this.getList(params));
 
-      this.getList();
       console.log(this.details)
 
       
@@ -32,8 +29,13 @@ export class ListComponentComponent implements OnInit {
     }
 
 
-    getList(): void {
-      this.airbnbApiService.getRoomListByCurrentPosition()
+    getList(params:any): void {
+      const coordenadas = {
+        lat: parseFloat(params.lat),
+        lng: parseFloat(params.lng)
+      };
+
+      this.airbnbApiService.getRoomListByCurrentPosition(coordenadas)
           .subscribe((details: Detail[]) => this.details = details);
     }
 

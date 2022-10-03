@@ -26,14 +26,14 @@ export class AirbnbApiService {
     })
   }
 
-  getRoomListByCurrentPosition(): Observable<Detail[]> {
+  getRoomListByCurrentPosition(coordenadas: any): Observable<Detail[]> {
     return this.getCurrentPosition()
       .pipe(
         switchMap(pos => {
           const body = {
             position: {
-              lat: pos.coords.latitude,
-              lng: pos.coords.longitude
+              lat: coordenadas.lat ? coordenadas.lat : pos.coords.latitude ,
+              lng: coordenadas.lng ? coordenadas.lng : pos.coords.longitude
             }
           }
           return this.http.post<Detail[]>(this.searchURL, body)
