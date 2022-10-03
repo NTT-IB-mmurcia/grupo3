@@ -14,6 +14,8 @@ import { Detail } from 'src/app/models/detail-model'; //es el modelo??
 })
 export class ListComponentComponent implements OnInit {
   details: Detail[]=[];
+  noResults: boolean = false;
+
   constructor(
     private airbnbApiService: AirbnbApiService, 
     private route: ActivatedRoute,
@@ -33,6 +35,7 @@ export class ListComponentComponent implements OnInit {
 
 
     getList(params:any): void {
+      this.noResults = params.length ? false : true;
       const coordenadas = {
         lat: parseFloat(params.lat),
         lng: parseFloat(params.lng)
