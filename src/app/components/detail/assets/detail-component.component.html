@@ -14,7 +14,7 @@
                 <div class="intro_share">⊛Share    ❤Save</div>
             </div>
             <div class = "image">
-                <img src = "{{detail.images.picture_url}}">
+                <img src = "{{detail.images.picture_url}}" alt = "Detail image">
             </div>
             <div class="more">
                 <div class="util">
@@ -28,7 +28,7 @@
                                     {{detail.accommodates}} guests·{{detail.bedrooms}} rooms·{{detail.beds}} beds·{{detail.bathrooms.$numberDecimal}} baths
                                 </div>
                             </div>
-                             <img  *ngIf = "detail.host.host_has_profile_pic" class = "image_" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'">
+                             <img  *ngIf = "detail.host.host_has_profile_pic" class = "image_" src = "{{detail.host.host_thumbnail_url}}" alt = "Profile image" onerror="this.src='/assets/images/default.png'">
                         </div>
                     </div>
                     <div class = "util_row border_bottom">Cancellation policy: {{detail.cancellation_policy}}</div>
@@ -131,7 +131,7 @@
                 <div class="review_list">
                     <div class = "review" *ngFor = "let review of detail.reviews.slice(0, 6)">
                         <div class = "review_data">
-                            <img class = "rewiew_image" src = "/assets/images/default.png">
+                            <img class = "rewiew_image" src = "/assets/images/default.png" alt = "Profile image">
                             <div class="review_name">
                                 <div class = "title_2">{{review.reviewer_name}}</div>
                                 <div>{{review.date | date}}</div>
@@ -170,7 +170,7 @@
     <!--HOST SECTION-->
         <div class="section section_host">
             <div class = "host host_intro">
-                <img  *ngIf = "detail.host.host_has_profile_pic" class = "host_image" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'">
+                <img  *ngIf = "detail.host.host_has_profile_pic" class = "host_image" alt = "Profile image" src = "{{detail.host.host_thumbnail_url}}" onerror="this.src='/assets/images/default.png'">
                 <div class="host_name">
                     <div class = "title">Hosteded by {{detail.host.host_name}}</div>
                     <div>Se registró en febrero 2019</div>
