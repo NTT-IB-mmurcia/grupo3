@@ -46,11 +46,8 @@ export class ListComponentComponent implements OnInit {
 
     goToDetails(event : any){
 
-      console.log("*** goToDetails ***", event);
-
       this.router.navigate(
-        ['/details'],
-        event
+        ['/details', event]
       );
     }
 
