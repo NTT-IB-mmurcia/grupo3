@@ -4,25 +4,35 @@
   width: 400px;
   height: 300px;
   border-radius: 7px;
+  display: flex;
+  justify-content: flex-end;
+}
+i{
+  padding: 15px;
+  font-weight: bold;
+  color: gray;
+  text-shadow: 2px 2px 2px   white;
 
 }
 .adress{
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.score{
+  margin-right: 25px;
 }
 .card{
   padding: 20px;
 }
 .container{
   max-width: 100%;
+  margin-left: 150px;
 }
-
+.col-sm-3{
+  width: 450px;
+}
 .cursor{
-
   cursor: pointer;
 }
-
-.loader {
- 
-}
-
 

@@ -5,6 +5,8 @@ import { DetailComponentComponent } from './controllers/detail-component.compone
 import { MapComponentComponent } from '../map/controllers/map-component.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IntroComponent } from './sections/intro/intro.component';
+import { ReviewsComponent } from './sections/reviews/reviews.component';
 
 
 
@@ -12,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     DetailComponentComponent,
     MapComponentComponent,
+    IntroComponent,
+    ReviewsComponent,
   ],
   imports: [
     CommonModule,

@@ -1,15 +1,19 @@
+
 <div *ngIf="details.length == 0">
   <h1>NO SE ENCONTRARON RESULTADOS :(</h1>
 </div>
 
 <div *ngIf="details.length > 0" class="container">
   <div class="row">
-<div (click)="goToDetails(detailList._id)"*ngFor="let detailList of details" class="col-sm-3">
-    <div><img class="image cursor" src="{{detailList.images.picture_url}}" alt="image"></div>
-    <div class="adress">{{detailList.address.street}}</div>
+<div (click)="goToDetails(detailList._id)" *ngFor="let detailList of details" class="col-sm-3">
+    <div class="image cursor" style="background-image: url({{detailList.images.picture_url}});">
+      <i class="fa-regular fa-heart"></i>
+    </div>
+    <div class="adress">{{detailList.address.street}}
+      <div class="score" *ngIf="detailList.review_scores.review_scores_rating > 0"> ★ {{detailList.review_scores.review_scores_rating}}</div>
+    </div>
     <div class="name">{{detailList.name}}</div>
-    <div class="price"><b>${{detailList.price.$numberDecimal}}</b>/noche</div> 
+    <div class="price"><b>${{detailList.price.$numberDecimal}}</b>/noche</div>
 </div>
-
 </div>
 </div>
