@@ -17,7 +17,7 @@ export class GetCoordenatesFromTextService {
 
   getCoordenates(city: string): Observable<any> {
 
-    let coordenates = this.http.get("http://www.mapquestapi.com/geocoding/v1/address?key=efpRzcQZ77fdDNhlG9bcuOJ2xA7dJald&location="+ city);
+    let coordenates = this.http.get("https://www.mapquestapi.com/geocoding/v1/address?key=efpRzcQZ77fdDNhlG9bcuOJ2xA7dJald&location="+ city);
 
     return coordenates;
 
