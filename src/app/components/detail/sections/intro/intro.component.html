@@ -35,19 +35,20 @@
             <div class="form">
                 <div class="form_box">
                     <div class = "form_intro">
-                        <div class="price"><span class = "price_value">{{detail.price.$numberDecimal}} $</span>/night</div>
+                        <div class="price"><span class = "price_value">{{priceDay}} $</span>/night</div>
                         <div class="score">
                             <span >★{{detail.review_scores.review_scores_rating/10}}·</span>
                             <span class="value">{{detail.number_of_reviews}} reviews</span>
                         </div>
                     </div>
                     <form [formGroup]="airbnForm" (ngSubmit)="onSubmit()">
+                        
                         <div class="dates">
-                            <input type = "date" placeholder="Check in" formControlName="start" type="text" onfocus="(this.type='date')">
-                            <input type = "date" placeholder="Check out" formControlName="end"   type="text" onfocus="(this.type='date')">
+                            <input type = "date" placeholder="Check in" formControlName="startF" type="text" onfocus="(this.type='date')">
+                            <input type = "date" placeholder="Check out" formControlName="endF"   type="text" onfocus="(this.type='date')">
                         </div>
                         <div class="guests">
-                            <select name="guests" id="guests" placeholder = "Guests" formControlName="guests">
+                            <select name="guests" formControlName="guestsF"  >
                                 <option value="" disabled>Guests</option>
                                 <option  value = "{{i+1}}" *ngFor="let _ of [].constructor(detail.accommodates), let i = index" >{{i+1}} Guest</option>
                             </select>
@@ -57,14 +58,22 @@
                     <div *ngIf = "hasResult" class="form_result">
                         <div class="data">
                             <div class="data_item">
-                                <span>{{detail.price.$numberDecimal}} x ? nights</span>
-                                <span>{{detail.price.$numberDecimal}} $</span>
+                                <span>{{priceDay}} $ x {{daysBetween}} nights</span>
+                                <span>{{priceDays}} $</span>
+                            </div>
+                            <div class="data_item">
+                                <span>Cleaning fee</span>
+                                <span>{{cleaningFee}} $</span>
+                            </div>
+                            <div class="data_item">
+                                <span>Security deposit</span>
+                                <span>{{securityDep}} $</span>
                             </div>
                         </div>
                         <div class="total">
                             <div class="data_item">
                                 <span>Total</span>
-                                <span>XX $</span>
+                                <span>{{priceTotal}} $</span>
                             </div>
                         </div>
                     </div>

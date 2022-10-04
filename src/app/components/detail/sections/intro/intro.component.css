@@ -50,7 +50,7 @@
     align-items: center;
     padding: 25px;
     min-width: 260px;
-    max-width: 100%;
+    max-width: 334px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     border-radius: 5px
 }
@@ -70,6 +70,16 @@
     font-weight: bold;
 }
 
+.intro_section .more .form form .dates {
+    display: flex;
+    flex-direction: row;
+
+}
+.intro_section .more .form form .date {
+    width: 50%;
+    flex: 1;
+
+}
 .intro_section .more .form form {
     width: 100%;
 ;
@@ -136,6 +146,7 @@
 @media (max-width: 768px) {
     .intro_section .more .form .form_box {
         min-width: 100%;
+        max-width: 100%;
     }
 
     .intro_section .more .form {
