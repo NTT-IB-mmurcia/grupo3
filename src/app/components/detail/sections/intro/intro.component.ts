@@ -64,11 +64,9 @@ export class IntroComponent implements OnInit {
 
   
   calculateValues(){
-    console.log('1');
     let guests = this.airbnForm.get('guestsF')?.value?.toString();
     let start  = this.airbnForm.get('startF')?.value?.toString();
     let end = this.airbnForm.get('endF')?.value?.toString();
-    console.log('Guests: ' + guests);
     if (guests) {
       console.log('2');
       let guestNum = parseInt(guests);
