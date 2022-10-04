@@ -51,10 +51,10 @@ export class IntroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.priceDayDef = this.detail?.price.$numberDecimal ? parseInt(this.detail.price.$numberDecimal) : 0;
-    this.extraGuest = this.detail?.extra_people.$numberDecimal ? parseInt(this.detail.extra_people.$numberDecimal) : 0;
-    this.cleaningFee = this.detail?.cleaning_fee.$numberDecimal ? parseInt(this.detail.cleaning_fee.$numberDecimal) : 0;
-    this.securityDep = this.detail?.security_deposit.$numberDecimal ? parseInt(this.detail.security_deposit.$numberDecimal) : 0;
+    this.priceDayDef = this.detail?.price?.$numberDecimal ? parseInt(this.detail.price.$numberDecimal) : 0;
+    this.extraGuest = this.detail?.extra_people?.$numberDecimal ? parseInt(this.detail.extra_people.$numberDecimal) : 0;
+    this.cleaningFee = this.detail?.cleaning_fee?.$numberDecimal ? parseInt(this.detail.cleaning_fee.$numberDecimal) : 0;
+    this.securityDep = this.detail?.security_deposit?.$numberDecimal ? parseInt(this.detail.security_deposit.$numberDecimal) : 0;
     this.priceDay = this.priceDayDef;
 
     this.airbnForm.valueChanges.subscribe(x => {
@@ -64,11 +64,9 @@ export class IntroComponent implements OnInit {
 
   
   calculateValues(){
-    console.log('1');
     let guests = this.airbnForm.get('guestsF')?.value?.toString();
     let start  = this.airbnForm.get('startF')?.value?.toString();
     let end = this.airbnForm.get('endF')?.value?.toString();
-    console.log('Guests: ' + guests);
     if (guests) {
       console.log('2');
       let guestNum = parseInt(guests);
