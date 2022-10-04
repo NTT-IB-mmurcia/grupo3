@@ -11,7 +11,7 @@ export class MapComponentComponent implements OnInit, AfterViewInit  {
   map : any;
   @Input() position : number[] = [];
 
-  constructor() { }
+
 
   private initMap(): void {
     this.map = L.map('map', {

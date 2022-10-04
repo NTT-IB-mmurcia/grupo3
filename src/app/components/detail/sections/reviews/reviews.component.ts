@@ -10,7 +10,6 @@ export class ReviewsComponent implements OnInit {
 
   @Input() detail: Detail | undefined;
 
-  constructor() { }
 
   ngOnInit(): void {
   }
