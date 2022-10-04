@@ -11,9 +11,13 @@ i{
   padding: 15px;
   font-weight: bold;
   color: gray;
-  text-shadow: 2px 2px 2px   white;
-
 }
+i:before {
+  -webkit-text-fill-color: gray;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
 .adress{
   font-weight: bold;
   display: flex;
